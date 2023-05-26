@@ -12,8 +12,8 @@ struct AdditionView: View {
     // MARK: Stored properties
     
     // The numbers to be added
-    @State var firstValue = Int.random(in: 1...72)
-    @State var secondValue = Int.random(in: 1...72)
+    @State var firstValue = Int.random(in: 1...12)
+    @State var secondValue = Int.random(in: 1...12)
     
     // Holds whatever input was provided by the user
     @State var input = ""
@@ -28,7 +28,7 @@ struct AdditionView: View {
 
     // The correct response
     var correctResponse: Int {
-        return firstValue + secondValue
+        return firstValue * secondValue
     }
     
     // The user interface to show
@@ -39,7 +39,7 @@ struct AdditionView: View {
             // 1. Present question
             Group {
                 HStack {
-                    Text(Operation.addition.rawValue)
+                    Text(Operation.multiplication.rawValue)
                     
                     Spacer()
                     
@@ -116,8 +116,8 @@ struct AdditionView: View {
     func generateNewQuestion() {
         
         // Generate a new question
-        firstValue = Int.random(in: 1...72)
-        secondValue = Int.random(in: 1...72)
+        firstValue = Int.random(in: 1...12)
+        secondValue = Int.random(in: 1...12)
 
         // Reset properties that track what's happening with the current question
         answerChecked = false
